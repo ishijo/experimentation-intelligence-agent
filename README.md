@@ -112,39 +112,6 @@ This means the agent isn't just a standalone app — it's composable infrastruct
 Raw experiment logs (simulated as structured JSON) are transformed into clean, enriched experiment summaries using dbt models. Airflow schedules nightly re-ingestion into ChromaDB when new experiments are added to the corpus — simulating the production pattern where an experimentation platform continuously produces new results that the agent should learn from.
  
 This layer makes the project feel production-grade: the vector store isn't a static file, it's a maintained, governed artifact with a real update cadence.
+
  
----
- 
-## What This Demonstrates
- 
-For **MLE roles**: model serving via FastAPI, inference optimization with quantized models, MLflow-adjacent experiment tracking thinking, data pipeline design with dbt and Airflow, deployment on cloud-adjacent infrastructure.
- 
-For **AI Engineer roles**: RAG architecture, vector database design and management, agentic multi-step reasoning with LangGraph, LLM API integration, evaluation pipeline thinking, MCP tool development.
- 
-For **Product DS roles**: deep experimentation domain knowledge, bias detection and responsible AI in the context of A/B testing, the full cycle from data → model → decision → deployment.
- 
----
- 
-## Build Plan (Sprint Structure)
- 
-**Weekend 1 — Core agent (portfolio-ready at end of this)**
-- Synthetic dataset generation with parameter randomization
-- LlamaIndex ingestion → ChromaDB
-- LangGraph graph with 4 nodes (intent, retrieval, synthesis, answer)
-- FastAPI endpoint
-- Basic README and Hugging Face deployment
-**Weekend 2 — Bias check + inference comparison**
-- Bias/validity check node (Node 4)
-- Ollama local model setup + API fallback
-- Benchmarked comparison in README
-- Responsible AI documentation
-**Weekend 3 — Pipeline + MCP (optional but strong)**
-- dbt models for raw log transformation
-- Airflow DAG for scheduled re-ingestion
-- MCP tools layer
-- Final README polish and demo GIF
----
- 
-## Resume Bullet (draft, update with actual metrics after build)
- 
-*Experimentation Intelligence Agent — Agentic RAG system for querying and synthesizing historical A/B test corpora; multi-node LangGraph reasoning pipeline with built-in experiment bias detection; served via FastAPI, deployed on Hugging Face Spaces; local inference via quantized Llama (Ollama) with benchmarked API comparison; extends Dell patent (2024) on experimentation insight retrieval.*
+
