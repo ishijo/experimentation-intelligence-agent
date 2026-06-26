@@ -1,0 +1,30 @@
+# ── Agent graph ──────────────────────────────────────────────────────────────
+langgraph==0.2.62
+langchain-core==0.3.25
+
+# ── Ingestion & indexing ──────────────────────────────────────────────────────
+llama-index-core==0.11.23
+llama-index-embeddings-huggingface==0.3.1
+llama-index-vector-stores-chroma==0.3.0
+
+# ── Vector store ──────────────────────────────────────────────────────────────
+chromadb==0.5.23
+
+# ── Embeddings ────────────────────────────────────────────────────────────────
+sentence-transformers==3.3.1
+# torch: pip auto-selects the MPS-enabled macOS build on Apple Silicon.
+# Do NOT add --index-url or --extra-index-url pointing to CUDA wheels.
+torch==2.4.1
+
+# ── API serving ───────────────────────────────────────────────────────────────
+fastapi==0.115.6
+uvicorn[standard]==0.32.1
+
+# ── LLM clients ───────────────────────────────────────────────────────────────
+anthropic==0.40.0
+ollama==0.4.4
+
+# ── Core utilities ────────────────────────────────────────────────────────────
+pydantic==2.10.4
+# numpy: pin below 2.0 — numpy 2.x breaks chromadb and some transformers builds on M2
+numpy>=1.26.0,<2.0.0
